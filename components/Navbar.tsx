@@ -98,7 +98,7 @@ const NavBar = () => {
         <Link href={"/"} className={cn(buttonVariants({ variant: "outline" }))}>
           Log in
         </Link>
-        <Link href={"/"} className={cn(buttonVariants({ variant: "default" }))}>
+        <Link href={"/dashboard"} className={cn(buttonVariants({ variant: "default" }))}>
           Sign up
         </Link>
       </div>
