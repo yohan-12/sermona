@@ -1,8 +1,19 @@
-
+import Form from "@/components/dashboard/create-form";
+import Breadcrumbs from "@/components/dashboard/breadcrumbs";
 const page = () => {
   return (
     <main>
-      <div>We are gonna have breadcrumbs and form</div>
+      <Breadcrumbs
+        breadcrumbs={[
+          { label: "People", href: "/dashboard/people" },
+          {
+            label: "Create People",
+            href: "/dashboard/people/create",
+            active: true,
+          },
+        ]}
+      />
+      <Form />
     </main>
   );
 }

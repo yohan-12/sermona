@@ -2,7 +2,7 @@ import Search from "@/components/dashboard/search";
 import { CreateInvoice } from "@/components/dashboard/buttons";
 import { Member, columns } from "@/components/dashboard/columns";
 import { DataTable } from "@/components/dashboard/data-table";
-
+import FormWithSheet from "@/components/dashboard/create-form-sheet";
 const page = () => {
   const data = [
     {
@@ -27,7 +27,8 @@ const page = () => {
       </div>
       <div className="mt-2 flex items-center justify-between gap-2 md:mt-8">
         <Search placeholder="Search invoices..." />
-        <CreateInvoice />
+        {/* <CreateInvoice /> */}
+        <FormWithSheet />
       </div>
       {/*  <Suspense key={query + currentPage} fallback={<InvoicesTableSkeleton />}>
         <Table query={query} currentPage={currentPage} />
