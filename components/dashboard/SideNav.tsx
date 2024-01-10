@@ -12,12 +12,12 @@ export default function SideNav() {
       >
         <div className="w-32 text-white md:w-40">
           <Image
-            src="/logo1.svg"
+            src="/dashboardPic2.svg"
             width={120}
             height={40}
             alt="Logo"
             className="h-8 md:h-10 lg:h-12"
-          />
+          />Sermona
         </div>
       </Link>
       <div className="flex grow flex-row justify-between space-x-2 md:flex-col md:space-x-0 md:space-y-2">

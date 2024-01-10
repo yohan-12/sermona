@@ -1,3 +1,5 @@
+'use client'
+import { Trophy, HeartHandshake, TrendingUp } from "lucide-react";
 const Hero2 = () => {
   return (
     <div className="bg-black">
@@ -10,12 +12,13 @@ const Hero2 = () => {
             Why choose us
           </span>
           <h2 className="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
-            Build a Website That Your Customers Love
+            Your Success is Our Success
           </h2>
           <p className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
-            Our templates allow for maximum customization. No technical skills
-            required – our intuitive design tools let you get the job done
-            easily.
+            We are invested in your church&apos;s growth and success. You are
+            not just a client; you&apos;re a partner in a shared journey.
+            We&apos;re here to support, understand and grow with you every step
+            of the way
           </p>
         </div>
 
@@ -30,11 +33,12 @@ const Hero2 = () => {
               }}
             >
               {/* SVG content */}
+              <Trophy />
             </div>
-            <h3 className="mt-6 text-gray-400">Customizable</h3>
+            <h3 className="mt-6 text-gray-400">Personal Mission</h3>
             <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
-              Tailor your landing pages look and feel, from the color scheme to
-              the font size, to the design of the page.
+              It&apos;s a personal mission, passion, and purpose inspired by my
+              dad&apos;s ministry to better serve your ministry&apos;s needs.
             </p>
           </div>
           <div className="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow">
@@ -46,26 +50,13 @@ const Hero2 = () => {
                 borderColor: "rgb(93, 79, 240)",
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-bolt"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <polyline points="13 3 13 10 19 10 11 21 11 14 5 14 13 3"></polyline>
-              </svg>
+              <HeartHandshake />
             </div>
-            <h3 className="mt-6 text-gray-400">Fast Performance</h3>
+            <h3 className="mt-6 text-gray-400">Collaborative Solutions</h3>
             <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
-              We build our templates for speed in mind, for super-fast load
-              times so your customers never waver.
+              Your challenges resonate personally with us. We evolve with your
+              feedback, ensuring our software meets the unique demands of your
+              ministry
             </p>
           </div>
 
@@ -78,31 +69,13 @@ const Hero2 = () => {
                 borderColor: "rgb(93, 79, 240)",
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="icon icon-tabler icon-tabler-tools"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                strokeWidth="2"
-                stroke="currentColor"
-                fill="none"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
-                <line x1="14.5" y1="5.5" x2="18.5" y2="9.5"></line>
-                <polyline points="12 8 7 3 3 7 8 12"></polyline>
-                <line x1="7" y1="8" x2="5.5" y2="9.5"></line>
-                <polyline points="16 12 21 17 17 21 12 16"></polyline>
-                <line x1="16" y1="17" x2="14.5" y2="18.5"></line>
-              </svg>
+              <TrendingUp />
             </div>
-            <h3 className="mt-6 text-gray-400">Fully Featured</h3>
+            <h3 className="mt-6 text-gray-400">Adapting with You</h3>
             <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">
-              Everything you need to succeed and launch your landing page, right
-              out of the box. No need to install anything else.
+              As your church&apos;s needs evolve, so does our software.
+              We&apos;re dedicated to continuous improvement to ensure your
+              ministry stays ahead.
             </p>
           </div>
 
