@@ -2,7 +2,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Plus } from "lucide-react";
 import {
   Sheet,
   SheetClose,
@@ -13,8 +12,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { buttonVariants } from "@/components/ui/button";
-import Link from "next/link";
+import { createPeople } from "@/lib/actions";
+import { Plus } from "lucide-react";
 import { useState } from "react";
 
 
@@ -35,7 +34,7 @@ const FormWithSheet = () => {
         </Button>
       </SheetTrigger>
       <SheetContent>
-        <form>
+        <form action={createPeople}>
           <SheetHeader>
             <SheetTitle>새로운 교인 등록</SheetTitle>
             <SheetDescription>
@@ -47,7 +46,7 @@ const FormWithSheet = () => {
               <Label htmlFor="name" className="text-right">
                 이름
               </Label>
-              <Input id="name" placeholder="이름..." className="col-span-3" />
+              <Input id="name" name="name"  placeholder="이름..." className="col-span-3" />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="username" className="text-right">
@@ -57,13 +56,14 @@ const FormWithSheet = () => {
                 id="username"
                 placeholder="이매일 주소..."
                 className="col-span-3"
+                name="email"
               />
             </div>
             <div className="grid grid-cols-4 items-center gap-4">
               <Label htmlFor="name" className="text-right">
                 나이
               </Label>
-              <Input id="name" placeholder="나이.." className="col-span-3" />
+              <Input id="name" name="age"  placeholder="나이.." className="col-span-3" />
             </div>
           </div>
           <SheetFooter>
@@ -79,7 +79,7 @@ const FormWithSheet = () => {
                 </Button>
 
                 <Button
-                  type="button"
+                  type="submit"
                   variant="default"
                   onClick={() => setSheetVisible(false)}
                   className="w-full" // Full width for the button
