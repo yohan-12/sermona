@@ -1,7 +1,4 @@
 "use client"
-
-import { ColumnDef } from "@tanstack/react-table";
-import { MoreHorizontal } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -11,14 +8,26 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-
+import { ColumnDef } from "@tanstack/react-table";
+import { MoreHorizontal } from "lucide-react";
+import Link from "next/link";
+import { deletePeople } from "@/lib/actions";
+import { revalidatePath } from "next/cache";
 export type Member = {
   id: string;
   name: string;
   email: string;
   age: number;
 };
-
+const handleDelete = async(userId: string) => {
+  try {
+    "use server"
+    await deletePeople(userId);
+    revalidatePath('/dashboard/people')
+  } catch (error) {
+    console.log("failed to delete user on the client side");
+  }
+}
 export const columns: ColumnDef<Member>[] = [
   {
     accessorKey: "name",
@@ -53,8 +62,10 @@ export const columns: ColumnDef<Member>[] = [
               Copy payment ID
             </DropdownMenuItem>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>View customer</DropdownMenuItem>
-            <DropdownMenuItem>View payment details</DropdownMenuItem>
+            <Link href={`/dashboard/people/${user.id}/edit`}>
+              <DropdownMenuItem>편집</DropdownMenuItem>
+            </Link>
+              <DropdownMenuItem onClick={()=> handleDelete(user.id)}>삭제</DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
       );
