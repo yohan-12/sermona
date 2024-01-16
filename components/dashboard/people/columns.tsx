@@ -19,6 +19,7 @@ export type Member = {
   email: string;
   age: number;
 };
+import { Checkbox } from "@/components/ui/checkbox";
 const handleDelete = async(userId: string) => {
   try {
     "use server"
@@ -29,6 +30,25 @@ const handleDelete = async(userId: string) => {
   }
 }
 export const columns: ColumnDef<Member>[] = [
+    {
+    id: "select",
+    header: ({ table }) => (
+      <Checkbox
+        checked={
+          table.getIsAllPageRowsSelected() ||
+          (table.getIsSomePageRowsSelected() && "indeterminate")
+        }
+        onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+        aria-label="Select all"
+      />
+    ),
+    cell: ({ row }) => (
+      <Checkbox
+        checked={row.getIsSelected()}
+        onCheckedChange={(value) => row.toggleSelected(!!value)}
+        aria-label="Select row"
+      />
+    ),},
   {
     accessorKey: "name",
     header: "Name",
